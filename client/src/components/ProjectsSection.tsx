@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import dashboardPreview from "@assets/generated_images/Dashboard_web_app_project_preview_bd7be2b2.png";
-import ecommercePreview from "@assets/generated_images/E-commerce_website_project_preview_de6da630.png";
+import ecommercePreview from "@assets/generated_images/E-commerce_website_project_preview_de6da630.png";// bad coding practice
+import ecommercePreview from "@assets/generated_images/ProjectImage.jpg";
 import mobileAppPreview from "@assets/generated_images/Mobile_app_project_preview_1ed18521.png";
 
 const projects = [
