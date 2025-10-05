@@ -1,0 +1,128 @@
+/* CSS Variables from the React version - Light Mode */
+:root {
+  --button-outline: rgba(0,0,0, .10);
+  --badge-outline: rgba(0,0,0, .05);
+  --opaque-button-border-intensity: -8;
+  
+  --elevate-1: rgba(0,0,0, .03);
+  --elevate-2: rgba(0,0,0, .08);
+  
+  --background: 0 0% 98%;
+  --foreground: 12 8% 10%;
+  --border: 0 0% 90%;
+  --card: 0 0% 100%;
+  --card-foreground: 12 8% 10%;
+  --card-border: 0 0% 93%;
+  --primary: 210 90% 50%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 0 0% 94%;
+  --secondary-foreground: 12 8% 10%;
+  --muted: 0 0% 95%;
+  --muted-foreground: 0 0% 40%;
+  --accent: 0 0% 94%;
+  --accent-foreground: 12 8% 10%;
+  --destructive: 0 84% 45%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 210 90% 50%;
+  --chart-1: 210 90% 50%;
+  --chart-2: 165 70% 40%;
+  
+  --radius: 0.5rem;
+}
+
+/* Dark Mode */
+.dark {
+  --button-outline: rgba(255,255,255, .10);
+  --badge-outline: rgba(255,255,255, .05);
+  --opaque-button-border-intensity: 9;
+  
+  --elevate-1: rgba(255,255,255, .04);
+  --elevate-2: rgba(255,255,255, .09);
+  
+  --background: 12 8% 6%;
+  --foreground: 0 0% 98%;
+  --border: 12 8% 15%;
+  --card: 12 8% 10%;
+  --card-foreground: 0 0% 98%;
+  --card-border: 12 8% 14%;
+  --primary: 210 100% 60%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 12 8% 15%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 12 8% 14%;
+  --muted-foreground: 0 0% 70%;
+  --accent: 12 8% 14%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 84% 50%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 210 100% 60%;
+  --chart-1: 210 100% 65%;
+  --chart-2: 165 80% 55%;
+}
+
+/* Custom Utility Classes */
+.hover-elevate {
+  position: relative;
+  z-index: 0;
+}
+
+.hover-elevate::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0px;
+  border-radius: inherit;
+  z-index: 999;
+  transition: background-color 0.2s;
+}
+
+.hover-elevate:hover::after {
+  background-color: var(--elevate-1);
+}
+
+.active-elevate-2 {
+  position: relative;
+  z-index: 0;
+}
+
+.active-elevate-2::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0px;
+  border-radius: inherit;
+  z-index: 999;
+  transition: background-color 0.2s;
+}
+
+.active-elevate-2:active::after {
+  background-color: var(--elevate-2);
+}
+
+.border.hover-elevate::after,
+.border.active-elevate-2::after {
+  inset: -1px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hidden class for mobile menu */
+.hidden {
+  display: none !important;
+}
+
+/* Screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

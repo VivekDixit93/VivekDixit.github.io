@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Single Page App</title>
+    <!-- This file is required for client-side routing to work properly on GitHub Pages -->
+  </head>
+  <body>
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      (function(l) {
+        // Check if the requested path has a file extension (like .js, .css, .png, etc.)
+        // If it does, it's likely a static asset; if not, it's likely a client-side route
+        var path = l.pathname;
+        if (path !== '/' && !/\./.test(path)) {
+          // No file extension - this is likely a client-side route
+          // Redirect to the main index.html to let the router handle it
+          // For GitHub Pages with project name in URL, we need to redirect back to the project root
+          window.location = l.protocol + '//' + l.host + '/VivekDixit.github.io/';
+        }
+      })(window.location);
+    </script>
+  </body>
+</html>

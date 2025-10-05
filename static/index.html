@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <title>Vivek Dixit - Business Intelligence Engineer Manager | Portfolio</title>
+  <meta name="description" content="Business Intelligence Engineer Manager at Amazon with 8+ years of experience delivering scalable BI solutions across pharmaceutical and e-commerce domains. Expert in AWS, Redshift, and data analytics." />
+  <meta property="og:title" content="Vivek Dixit - Business Intelligence Engineer Manager" />
+  <meta property="og:description" content="Experienced BI leader specializing in cloud-based data solutions, team management, and driving business impact through data-driven insights." />
+  <meta property="og:type" content="website" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            border: 'hsl(var(--border))',
+            background: 'hsl(var(--background))',
+            foreground: 'hsl(var(--foreground))',
+            primary: {
+              DEFAULT: 'hsl(var(--primary))',
+              foreground: 'hsl(var(--primary-foreground))',
+            },
+            secondary: {
+              DEFAULT: 'hsl(var(--secondary))',
+              foreground: 'hsl(var(--secondary-foreground))',
+            },
+            muted: {
+              DEFAULT: 'hsl(var(--muted))',
+              foreground: 'hsl(var(--muted-foreground))',
+            },
+            accent: {
+              DEFAULT: 'hsl(var(--accent))',
+              foreground: 'hsl(var(--accent-foreground))',
+            },
+            card: {
+              DEFAULT: 'hsl(var(--card))',
+              foreground: 'hsl(var(--card-foreground))',
+            },
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          borderRadius: {
+            lg: 'var(--radius)',
+            md: 'calc(var(--radius) - 2px)',
+            sm: 'calc(var(--radius) - 4px)',
+          },
+        },
+      },
+    }
+  </script>
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans antialiased bg-background text-foreground min-h-screen">
+  
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b border-border">
+    <div class="max-w-6xl mx-auto px-6 md:px-8">
+      <div class="flex items-center justify-between h-16">
+        <button
+          onclick="scrollToSection('hero')"
+          class="text-lg font-semibold hover-elevate active-elevate-2 px-2 py-1 rounded-md"
+          data-testid="link-logo"
+        >
+          Portfolio
+        </button>
+
+        <div class="hidden md:flex items-center gap-1">
+          <button onclick="scrollToSection('hero')" class="px-3 py-2 text-sm hover-elevate active-elevate-2 rounded-md" data-testid="link-nav-hero">About</button>
+          <button onclick="scrollToSection('skills')" class="px-3 py-2 text-sm hover-elevate active-elevate-2 rounded-md" data-testid="link-nav-skills">Skills</button>
+          <button onclick="scrollToSection('projects')" class="px-3 py-2 text-sm hover-elevate active-elevate-2 rounded-md" data-testid="link-nav-projects">Projects</button>
+          <button onclick="scrollToSection('experience')" class="px-3 py-2 text-sm hover-elevate active-elevate-2 rounded-md" data-testid="link-nav-experience">Experience</button>
+          <button onclick="scrollToSection('contact')" class="px-3 py-2 text-sm hover-elevate active-elevate-2 rounded-md" data-testid="link-nav-contact">Contact</button>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button
+            id="theme-toggle"
+            class="h-9 w-9 inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors hover-elevate active-elevate-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            data-testid="button-theme-toggle"
+          >
+            <svg id="sun-icon" class="h-5 w-5 hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+            </svg>
+            <svg id="moon-icon" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+            </svg>
+          </button>
+
+          <button
+            id="mobile-menu-toggle"
+            class="md:hidden h-9 w-9 inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors hover-elevate active-elevate-2"
+            data-testid="button-mobile-menu"
+          >
+            <svg id="menu-icon" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
+            </svg>
+            <svg id="close-icon" class="h-5 w-5 hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="mobile-menu" class="hidden md:hidden py-4 border-t border-border">
+        <button onclick="scrollToSection('hero'); closeMobileMenu();" class="block w-full text-left px-4 py-3 hover-elevate active-elevate-2 rounded-md" data-testid="link-mobile-hero">About</button>
+        <button onclick="scrollToSection('skills'); closeMobileMenu();" class="block w-full text-left px-4 py-3 hover-elevate active-elevate-2 rounded-md" data-testid="link-mobile-skills">Skills</button>
+        <button onclick="scrollToSection('projects'); closeMobileMenu();" class="block w-full text-left px-4 py-3 hover-elevate active-elevate-2 rounded-md" data-testid="link-mobile-projects">Projects</button>
+        <button onclick="scrollToSection('experience'); closeMobileMenu();" class="block w-full text-left px-4 py-3 hover-elevate active-elevate-2 rounded-md" data-testid="link-mobile-experience">Experience</button>
+        <button onclick="scrollToSection('contact'); closeMobileMenu();" class="block w-full text-left px-4 py-3 hover-elevate active-elevate-2 rounded-md" data-testid="link-mobile-contact">Contact</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center px-6 md:px-8 relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-chart-2/5 pointer-events-none"></div>
+      
+      <div class="max-w-4xl mx-auto text-center relative z-10">
+        <div class="mb-8 flex justify-center">
+          <div class="relative">
+            <img
+              src="assets/Professional_developer_avatar_illustration_3c816b45.png"
+              alt="Professional developer avatar"
+              class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-xl ring-4 ring-primary/20"
+              data-testid="img-hero-avatar"
+            />
+            <div class="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-chart-2/20 blur-2xl -z-10"></div>
+          </div>
+        </div>
+
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight" data-testid="text-hero-title">
+          Hi, I'm Vivek Dixit
+        </h1>
+        
+        <p class="text-xl md:text-2xl text-muted-foreground mb-8" data-testid="text-hero-tagline">
+          Business Intelligence Engineer Manager
+        </p>
+
+        <p class="text-base md:text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
+          Business Intelligence Engineer Manager at Amazon with 8+ years of experience delivering scalable BI solutions. 
+          Skilled in leading end-to-end projects, managing teams, and aligning BI strategies with business goals in 
+          pharmaceutical and e-commerce domains.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <button
+            onclick="scrollToSection('projects')"
+            class="min-w-[200px] inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover-elevate active-elevate-2 h-10 px-8 text-base"
+            data-testid="button-view-work"
+          >
+            View My Work
+            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+            </svg>
+          </button>
+          
+          <button
+            onclick="scrollToSection('contact')"
+            class="min-w-[200px] inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 border border-border bg-background hover-elevate active-elevate-2 h-10 px-8 text-base backdrop-blur-sm"
+            data-testid="button-contact"
+          >
+            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m2 7 8.97 5.7a1.94 1.94 0 0 0 2.06 0L22 7"/>
+            </svg>
+            Contact Me
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 md:py-32 px-6 md:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4" data-testid="text-skills-title">
+            Technical Proficiency
+          </h2>
+          <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Expertise in cloud computing, data warehousing, and orchestration tools for building scalable BI solutions
+          </p>
+        </div>
+
+        <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          <!-- AWS -->
+          <div class="flex flex-col items-center gap-3 p-6 rounded-md border border-border bg-card hover-elevate active-elevate-2 transition-transform hover:-translate-y-1" data-testid="card-skill-aws">
+            <svg class="h-12 w-12" style="color: #FF9900" fill="currentColor" viewBox="0 0 24 24"><path d="M6.763 10.036c0 .296.032.535.088.71.064.176.144.368.256.576.04.063.056.127.056.183 0 .08-.048.16-.143.24l-.472.315c-.068.047-.136.07-.2.07-.08 0-.16-.04-.239-.11-.112-.12-.208-.248-.28-.384-.072-.135-.144-.296-.224-.47-.56.66-1.256.99-2.096.99-.6 0-1.08-.172-1.431-.517-.352-.345-.528-.804-.528-1.378 0-.61.216-1.106.648-1.482.432-.376 1.008-.564 1.728-.564.24 0 .488.016.744.056.256.04.52.088.8.152v-.503c0-.52-.108-.884-.32-1.098-.216-.215-.584-.32-1.096-.32-.232 0-.472.027-.72.088-.248.056-.488.128-.712.216-.104.048-.184.08-.232.096-.048.016-.08.024-.104.024-.096 0-.144-.072-.144-.215v-.336c0-.112.016-.2.056-.255.04-.056.12-.112.24-.168.232-.12.512-.216.832-.296.328-.08.68-.12 1.048-.12.8 0 1.384.183 1.76.545.368.363.552.91.552 1.64v2.16zm-2.88 1.096c.232 0 .472-.04.728-.128.256-.088.48-.24.672-.448.12-.135.208-.28.256-.448.048-.168.08-.368.08-.6v-.288c-.2-.048-.416-.088-.64-.12-.224-.032-.448-.048-.68-.048-.48 0-.832.095-1.056.288-.224.192-.336.46-.336.808 0 .336.088.584.264.752.168.175.432.256.712.256zm5.44.712c-.12 0-.2-.024-.248-.07-.048-.048-.088-.144-.12-.272l-1.36-4.469c-.032-.104-.048-.176-.048-.215 0-.088.04-.135.128-.135h.528c.12 0 .208.023.248.07.047.047.08.143.112.27l.968 3.826.904-3.825c.024-.128.056-.224.104-.272.048-.047.136-.07.256-.07h.432c.12 0 .208.023.256.07.048.047.088.143.104.27l.92 3.874.992-3.874c.032-.127.072-.223.12-.27.047-.047.127-.07.247-.07h.504c.088 0 .136.047.136.135 0 .04-.008.08-.016.127-.008.048-.024.112-.048.208L11.624 11.5c-.032.104-.072.176-.12.24-.048.047-.128.07-.248.07h-.464c-.12 0-.208-.024-.256-.072-.048-.048-.088-.136-.104-.264l-.904-3.76-.896 3.76c-.024.128-.056.216-.104.264-.048.048-.136.072-.256.072h-.464zm8.016.184c-.328 0-.656-.04-.976-.112-.32-.08-.568-.168-.728-.28-.096-.064-.16-.136-.184-.2-.024-.063-.04-.127-.04-.184v-.336c0-.144.056-.215.16-.215.04 0 .08.008.12.024.04.016.096.04.168.072.224.103.464.184.72.24.264.056.52.08.776.08.416 0 .736-.072.968-.216.232-.144.344-.344.344-.608 0-.176-.064-.328-.184-.448-.12-.12-.344-.232-.664-.328l-.952-.303c-.48-.152-.832-.376-1.048-.672-.216-.296-.32-.616-.32-.96 0-.272.056-.512.176-.72.12-.207.28-.384.488-.52.208-.144.448-.248.728-.328.28-.08.584-.12.904-.12.136 0 .28.008.416.024.144.016.272.04.408.072.128.032.256.063.376.103.12.04.216.08.296.12.08.048.136.095.168.136.032.04.048.095.048.168v.304c0 .144-.056.216-.16.216-.064 0-.168-.04-.304-.104-.464-.216-.984-.32-1.552-.32-.376 0-.672.063-.888.183-.216.12-.328.312-.328.568 0 .176.072.328.2.448.136.12.368.24.704.336l.936.296c.472.152.808.368 1.016.648.208.28.304.608.304.968 0 .28-.056.536-.176.76-.12.232-.28.424-.496.584-.216.159-.48.279-.792.36-.304.088-.632.128-.984.128z"/></svg>
+            <span class="text-sm font-medium text-center">AWS</span>
+          </div>
+          
+          <!-- Redshift -->
+          <div class="flex flex-col items-center gap-3 p-6 rounded-md border border-border bg-card hover-elevate active-elevate-2 transition-transform hover:-translate-y-1" data-testid="card-skill-redshift">
+            <svg class="h-12 w-12" style="color: #8C4FFF" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/>
+            </svg>
+            <span class="text-sm font-medium text-center">Redshift</span>
+          </div>
+          
+          <!-- Teradata -->
+          <div class="flex flex-col items-center gap-3 p-6 rounded-md border border-border bg-card hover-elevate active-elevate-2 transition-transform hover:-translate-y-1" data-testid="card-skill-teradata">
+            <svg class="h-12 w-12" style="color: #F37440" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/>
+            </svg>
+            <span class="text-sm font-medium text-center">Teradata</span>
+          </div>
+          
+          <!-- SQL -->
+          <div class="flex flex-col items-center gap-3 p-6 rounded-md border border-border bg-card hover-elevate active-elevate-2 transition-transform hover:-translate-y-1" data-testid="card-skill-sql">
+            <svg class="h-12 w-12" style="color: #00758F" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+            </svg>
+            <span class="text-sm font-medium text-center">SQL</span>
+          </div>
+          
+          <!-- Python -->
+          <div class="flex flex-col items-center gap-3 p-6 rounded-md border border-border bg-card hover-elevate active-elevate-2 transition-transform hover:-translate-y-1" data-testid="card-skill-python">
+            <svg class="h-12 w-12" style="color: #3776AB" fill="currentColor" viewBox="0 0 24 24"><path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"/></svg>
+            <span class="text-sm font-medium text-center">Python</span>
+          </div>
+          
+          <!-- Apache Airflow -->
+          <div class="flex flex-col items-center gap-3 p-6 rounded-md border border-border bg-card hover-elevate active-elevate-2 transition-transform hover:-translate-y-1" data-testid="card-skill-apache-airflow">
+            <svg class="h-12 w-12" style="color: #017CEE" fill="currentColor" viewBox="0 0 24 24"><path d="M13.488 1.022l-8.96 8.96 8.96 8.96 8.96-8.96-8.96-8.96zm4.48 8.96l-4.48 4.48-4.48-4.48 4.48-4.48 4.48 4.48z"/></svg>
+            <span class="text-sm font-medium text-center">Apache Airflow</span>
+          </div>
+          
+          <!-- Informatica -->
+          <div class="flex flex-col items-center gap-3 p-6 rounded-md border border-border bg-card hover-elevate active-elevate-2 transition-transform hover:-translate-y-1" data-testid="card-skill-informatica">
+            <svg class="h-12 w-12" style="color: #FF6600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/>
+            </svg>
+            <span class="text-sm font-medium text-center">Informatica</span>
+          </div>
+          
+          <!-- Quicksight -->
+          <div class="flex flex-col items-center gap-3 p-6 rounded-md border border-border bg-card hover-elevate active-elevate-2 transition-transform hover:-translate-y-1" data-testid="card-skill-quicksight">
+            <svg class="h-12 w-12" style="color: #FF9900" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/>
+            </svg>
+            <span class="text-sm font-medium text-center">Quicksight</span>
+          </div>
+          
+          <!-- Tableau -->
+          <div class="flex flex-col items-center gap-3 p-6 rounded-md border border-border bg-card hover-elevate active-elevate-2 transition-transform hover:-translate-y-1" data-testid="card-skill-tableau">
+            <svg class="h-12 w-12" style="color: #E97627" fill="currentColor" viewBox="0 0 24 24"><path d="M11.654 0v1.5h-1.75v3.75h1.75V7h.692V5.25h1.75V1.5h-1.75V0h-.692zm6.769 2.25v1.125h-1.308v2.813h1.308v1.124h.519v-1.124h1.308V3.375h-1.308V2.25h-.519zm-13.538 0v1.125H3.577v2.813h1.308v1.124h.519v-1.124h1.308V3.375H5.404V2.25h-.519zM11.654 7.5v1.5h-1.75v3.75h1.75V14h.692v-1.25h1.75V9h-1.75V7.5h-.692zm6.769 2.25v1.125h-1.308v2.813h1.308v1.124h.519v-1.124h1.308V10.87h-1.308V9.75h-.519zm-13.538 0v1.125H3.577v2.813h1.308v1.124h.519v-1.124h1.308V10.87H5.404V9.75h-.519zm6.769 5.25v1.5h-1.75V21h1.75v1.25h.692V21h1.75v-4.5h-1.75v-1.5h-.692zm6.769 2.25v1.125h-1.308V21h1.308v1.125h.519V21h1.308v-2.813h-1.308V17.25h-.519zm-13.538 0v1.125H3.577V21h1.308v1.125h.519V21h1.308v-2.813H5.404V17.25h-.519z"/></svg>
+            <span class="text-sm font-medium text-center">Tableau</span>
+          </div>
+          
+          <!-- Alteryx -->
+          <div class="flex flex-col items-center gap-3 p-6 rounded-md border border-border bg-card hover-elevate active-elevate-2 transition-transform hover:-translate-y-1" data-testid="card-skill-alteryx">
+            <svg class="h-12 w-12" style="color: #0078C0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/>
+            </svg>
+            <span class="text-sm font-medium text-center">Alteryx</span>
+          </div>
+          
+          <!-- Excel -->
+          <div class="flex flex-col items-center gap-3 p-6 rounded-md border border-border bg-card hover-elevate active-elevate-2 transition-transform hover:-translate-y-1" data-testid="card-skill-excel">
+            <svg class="h-12 w-12" style="color: #217346" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/>
+            </svg>
+            <span class="text-sm font-medium text-center">Excel</span>
+          </div>
+          
+          <!-- Jira -->
+          <div class="flex flex-col items-center gap-3 p-6 rounded-md border border-border bg-card hover-elevate active-elevate-2 transition-transform hover:-translate-y-1" data-testid="card-skill-jira">
+            <svg class="h-12 w-12" style="color: #0052CC" fill="currentColor" viewBox="0 0 24 24"><path d="M11.571 11.513H0a5.218 5.218 0 0 0 5.232 5.215h2.13v2.057A5.215 5.215 0 0 0 12.575 24V12.457a.944.944 0 0 0-.944-.944h-.06zm5.723-5.756H5.736a5.215 5.215 0 0 0 5.215 5.214h2.129v2.058a5.218 5.218 0 0 0 5.215 5.214V6.701a.944.944 0 0 0-.944-.944h-.057zM23.013 0H11.455a5.215 5.215 0 0 0 5.215 5.215h2.129v2.057A5.215 5.215 0 0 0 24 12.457V.944A.944.944 0 0 0 23.056 0h-.043z"/></svg>
+            <span class="text-sm font-medium text-center">Jira</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 md:py-32 px-6 md:px-8 bg-muted/30">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4" data-testid="text-projects-title">
+            Key Projects & Achievements
+          </h2>
+          <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Impactful BI solutions delivering measurable business value across pharmaceutical and e-commerce domains
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Project 1 -->
+          <div class="bg-card rounded-xl border border-border overflow-hidden hover-elevate transition-transform hover:-translate-y-1" data-testid="card-project-1">
+            <div class="aspect-video overflow-hidden bg-muted">
+              <img
+                src="assets/Dashboard_web_app_project_preview_bd7be2b2.png"
+                alt="EU Communication Reporting System"
+                class="w-full h-full object-cover"
+                loading="lazy"
+                data-testid="img-project-1"
+              />
+            </div>
+            
+            <div class="p-6">
+              <div class="flex items-start justify-between mb-3">
+                <h3 class="text-xl font-semibold" data-testid="text-project-title-1">
+                  EU Communication Reporting System
+                </h3>
+                <span class="ml-2 shrink-0 inline-flex items-center rounded-md border border-border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground">
+                  Amazon
+                </span>
+              </div>
+              
+              <p class="text-muted-foreground mb-3 leading-relaxed">
+                Automated reporting system saving 80% (17hrs weekly) of a 7-member team's time. QuickSight dashboard with 300 daily users driving strategic execution.
+              </p>
+              
+              <div class="mb-4 p-3 bg-muted/50 rounded-md">
+                <p class="text-sm font-medium text-primary">
+                  Impact: 80% time savings, 300 daily users
+                </p>
+              </div>
+              
+              <div class="flex flex-wrap gap-2">
+                <span class="inline-flex items-center rounded-md bg-secondary px-2 py-1 text-xs font-medium text-secondary-foreground ring-1 ring-inset ring-secondary-foreground/10" data-testid="badge-tech-aws">AWS</span>
+                <span class="inline-flex items-center rounded-md bg-secondary px-2 py-1 text-xs font-medium text-secondary-foreground ring-1 ring-inset ring-secondary-foreground/10" data-testid="badge-tech-redshift">Redshift</span>
+                <span class="inline-flex items-center rounded-md bg-secondary px-2 py-1 text-xs font-medium text-secondary-foreground ring-1 ring-inset ring-secondary-foreground/10" data-testid="badge-tech-quicksight">Quicksight</span>
+                <span class="inline-flex items-center rounded-md bg-secondary px-2 py-1 text-xs font-medium text-secondary-foreground ring-1 ring-inset ring-secondary-foreground/10" data-testid="badge-tech-salesforce">Salesforce</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="bg-card rounded-xl border border-border overflow-hidden hover-elevate transition-transform hover:-translate-y-1" data-testid="card-project-2">
+            <div class="aspect-video overflow-hidden bg-muted">
+              <img
+                src="assets/E-commerce_website_project_preview_de6da630.png"
+                alt="Marketing Analytics Solution"
+                class="w-full h-full object-cover"
+                loading="lazy"
+                data-testid="img-project-2"
+              />
+            </div>
+            
+            <div class="p-6">
+              <div class="flex items-start justify-between mb-3">
+                <h3 class="text-xl font-semibold" data-testid="text-project-title-2">
+                  Marketing Analytics Solution
+                </h3>
+                <span class="ml-2 shrink-0 inline-flex items-center rounded-md border border-border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground">
+                  Amazon
+                </span>
+              </div>
+              
+              <p class="text-muted-foreground mb-3 leading-relaxed">
+                Architected solution adopted Amazon Worldwide, integrating data with 3rd-party tools to improve website traffic by 15% in EU and ROI by 50%.
+              </p>
+              
+              <div class="mb-4 p-3 bg-muted/50 rounded-md">
+                <p class="text-sm font-medium text-primary">
+                  Impact: 15% traffic increase, 50% ROI improvement
+                </p>
+              </div>
+              
+              <div class="flex flex-wrap gap-2">
+                <span class="inline-flex items-center rounded-md bg-secondary px-2 py-1 text-xs font-medium text-secondary-foreground ring-1 ring-inset ring-secondary-foreground/10" data-testid="badge-tech-aws">AWS</span>
+                <span class="inline-flex items-center rounded-md bg-secondary px-2 py-1 text-xs font-medium text-secondary-foreground ring-1 ring-inset ring-secondary-foreground/10" data-testid="badge-tech-redshift">Redshift</span>
+                <span class="inline-flex items-center rounded-md bg-secondary px-2 py-1 text-xs font-medium text-secondary-foreground ring-1 ring-inset ring-secondary-foreground/10" data-testid="badge-tech-python">Python</span>
+                <span class="inline-flex items-center rounded-md bg-secondary px-2 py-1 text-xs font-medium text-secondary-foreground ring-1 ring-inset ring-secondary-foreground/10" data-testid="badge-tech-quicksight">Quicksight</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="bg-card rounded-xl border border-border overflow-hidden hover-elevate transition-transform hover:-translate-y-1" data-testid="card-project-3">
+            <div class="aspect-video overflow-hidden bg-muted">
+              <img
+                src="assets/Mobile_app_project_preview_1ed18521.png"
+                alt="Commercial Data Lake & Tableau Platform"
+                class="w-full h-full object-cover"
+                loading="lazy"
+                data-testid="img-project-3"
+              />
+            </div>
+            
+            <div class="p-6">
+              <div class="flex items-start justify-between mb-3">
+                <h3 class="text-xl font-semibold" data-testid="text-project-title-3">
+                  Commercial Data Lake & Tableau Platform
+                </h3>
+                <span class="ml-2 shrink-0 inline-flex items-center rounded-md border border-border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground">
+                  ZS Associates
+                </span>
+              </div>
+              
+              <p class="text-muted-foreground mb-3 leading-relaxed">
+                Set up first cloud-based environment with PySpark processing and Tableau reporting. Integrated multiple hybrid platforms for comprehensive analytics.
+              </p>
+              
+              <div class="mb-4 p-3 bg-muted/50 rounded-md">
+                <p class="text-sm font-medium text-primary">
+                  Impact: First cloud-based BI platform
+                </p>
+              </div>
+              
+              <div class="flex flex-wrap gap-2">
+                <span class="inline-flex items-center rounded-md bg-secondary px-2 py-1 text-xs font-medium text-secondary-foreground ring-1 ring-inset ring-secondary-foreground/10" data-testid="badge-tech-aws">AWS</span>
+                <span class="inline-flex items-center rounded-md bg-secondary px-2 py-1 text-xs font-medium text-secondary-foreground ring-1 ring-inset ring-secondary-foreground/10" data-testid="badge-tech-pyspark">PySpark</span>
+                <span class="inline-flex items-center rounded-md bg-secondary px-2 py-1 text-xs font-medium text-secondary-foreground ring-1 ring-inset ring-secondary-foreground/10" data-testid="badge-tech-tableau">Tableau</span>
+                <span class="inline-flex items-center rounded-md bg-secondary px-2 py-1 text-xs font-medium text-secondary-foreground ring-1 ring-inset ring-secondary-foreground/10" data-testid="badge-tech-airflow">Airflow</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-24 md:py-32 px-6 md:px-8">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4" data-testid="text-experience-title">
+            Work Experience
+          </h2>
+          <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
+            My professional journey building impactful solutions
+          </p>
+        </div>
+
+        <div class="relative">
+          <div class="absolute left-8 top-0 bottom-0 w-px bg-border hidden md:block"></div>
+
+          <div class="space-y-12">
+            <!-- Experience 1 -->
+            <div class="relative" data-testid="card-experience-1">
+              <div class="flex gap-6">
+                <div class="hidden md:flex items-start">
+                  <div class="flex items-center justify-center w-16 h-16 rounded-full bg-primary text-primary-foreground shadow-lg">
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="m22 16.92-7 3.08-2 1-2-1-7-3.08"/><path d="M2 11 12 6l10 5"/><path d="m2 16.92 7 3.08 2 1 2-1 7-3.08"/>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="flex-1 pb-8">
+                  <div class="bg-card rounded-xl border border-border p-6">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4 gap-2">
+                      <div>
+                        <h3 class="text-xl font-semibold" data-testid="text-role-1">
+                          Business Intelligence Engineer Manager
+                        </h3>
+                        <p class="text-muted-foreground font-medium" data-testid="text-company-1">
+                          Amazon
+                        </p>
+                        <p class="text-sm text-muted-foreground" data-testid="text-location-1">
+                          Luxembourg, Europe
+                        </p>
+                      </div>
+                      <span class="text-sm text-muted-foreground font-medium shrink-0" data-testid="text-period-1">
+                        July 2024 - Present
+                      </span>
+                    </div>
+
+                    <ul class="space-y-2">
+                      <li class="flex gap-2 text-sm text-muted-foreground" data-testid="text-achievement-1-0">
+                        <span class="text-primary mt-1.5">•</span>
+                        <span>Conceptualized and managed implementation of automated EU communication reporting system, saving 80% (17hrs weekly) of team time</span>
+                      </li>
+                      <li class="flex gap-2 text-sm text-muted-foreground" data-testid="text-achievement-1-1">
+                        <span class="text-primary mt-1.5">•</span>
+                        <span>Managed diverse team of Marketing Specialists, Data Engineers, and BIEs to deliver QuickSight dashboard with 300 daily users</span>
+                      </li>
+                      <li class="flex gap-2 text-sm text-muted-foreground" data-testid="text-achievement-1-2">
+                        <span class="text-primary mt-1.5">•</span>
+                        <span>Collaborating with cross-functional teams to devise 2025 BIE strategy</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Experience 2 -->
+            <div class="relative" data-testid="card-experience-2">
+              <div class="flex gap-6">
+                <div class="hidden md:flex items-start">
+                  <div class="flex items-center justify-center w-16 h-16 rounded-full bg-primary text-primary-foreground shadow-lg">
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="flex-1 pb-8">
+                  <div class="bg-card rounded-xl border border-border p-6">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4 gap-2">
+                      <div>
+                        <h3 class="text-xl font-semibold" data-testid="text-role-2">
+                          Senior Business Intelligence Engineer
+                        </h3>
+                        <p class="text-muted-foreground font-medium" data-testid="text-company-2">
+                          Amazon
+                        </p>
+                        <p class="text-sm text-muted-foreground" data-testid="text-location-2">
+                          Luxembourg, Europe
+                        </p>
+                      </div>
+                      <span class="text-sm text-muted-foreground font-medium shrink-0" data-testid="text-period-2">
+                        June 2021 - June 2024
+                      </span>
+                    </div>
+
+                    <ul class="space-y-2">
+                      <li class="flex gap-2 text-sm text-muted-foreground" data-testid="text-achievement-2-0">
+                        <span class="text-primary mt-1.5">•</span>
+                        <span>Architected solution adopted Amazon Worldwide, improving website traffic by 15% in EU and ROI by 50%</span>
+                      </li>
+                      <li class="flex gap-2 text-sm text-muted-foreground" data-testid="text-achievement-2-1">
+                        <span class="text-primary mt-1.5">•</span>
+                        <span>Designed automated process saving 27hrs/week across team of 18</span>
+                      </li>
+                      <li class="flex gap-2 text-sm text-muted-foreground" data-testid="text-achievement-2-2">
+                        <span class="text-primary mt-1.5">•</span>
+                        <span>Led stakeholder management process, improving satisfaction score from 27% to 73%</span>
+                      </li>
+                      <li class="flex gap-2 text-sm text-muted-foreground" data-testid="text-achievement-2-3">
+                        <span class="text-primary mt-1.5">•</span>
+                        <span>Led end-to-end reporting and data management for Marketing (Traffic) team</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Experience 3 -->
+            <div class="relative" data-testid="card-experience-3">
+              <div class="flex gap-6">
+                <div class="hidden md:flex items-start">
+                  <div class="flex items-center justify-center w-16 h-16 rounded-full bg-primary text-primary-foreground shadow-lg">
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="flex-1 pb-8">
+                  <div class="bg-card rounded-xl border border-border p-6">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4 gap-2">
+                      <div>
+                        <h3 class="text-xl font-semibold" data-testid="text-role-3">
+                          Senior Business Analyst
+                        </h3>
+                        <p class="text-muted-foreground font-medium" data-testid="text-company-3">
+                          Novartis
+                        </p>
+                        <p class="text-sm text-muted-foreground" data-testid="text-location-3">
+                          Strategic Data Convergence Initiative
+                        </p>
+                      </div>
+                      <span class="text-sm text-muted-foreground font-medium shrink-0" data-testid="text-period-3">
+                        September 2020 - June 2021
+                      </span>
+                    </div>
+
+                    <ul class="space-y-2">
+                      <li class="flex gap-2 text-sm text-muted-foreground" data-testid="text-achievement-3-0">
+                        <span class="text-primary mt-1.5">•</span>
+                        <span>Integrated data from disparate sources into centralized system, improving data quality and reporting efficiency</span>
+                      </li>
+                      <li class="flex gap-2 text-sm text-muted-foreground" data-testid="text-achievement-3-1">
+                        <span class="text-primary mt-1.5">•</span>
+                        <span>Orchestrated stakeholder management ensuring alignment on project objectives</span>
+                      </li>
+                      <li class="flex gap-2 text-sm text-muted-foreground" data-testid="text-achievement-3-2">
+                        <span class="text-primary mt-1.5">•</span>
+                        <span>Managed team of 5 Analysts, 4 Data Engineers, and 2 Dell Boomi experts</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Experience 4 -->
+            <div class="relative" data-testid="card-experience-4">
+              <div class="flex gap-6">
+                <div class="hidden md:flex items-start">
+                  <div class="flex items-center justify-center w-16 h-16 rounded-full bg-primary text-primary-foreground shadow-lg">
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="flex-1 pb-8">
+                  <div class="bg-card rounded-xl border border-border p-6">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4 gap-2">
+                      <div>
+                        <h3 class="text-xl font-semibold" data-testid="text-role-4">
+                          Senior Business Technology Analyst
+                        </h3>
+                        <p class="text-muted-foreground font-medium" data-testid="text-company-4">
+                          ZS Associates
+                        </p>
+                        <p class="text-sm text-muted-foreground" data-testid="text-location-4">
+                          Commercial Data Lake & Tableau Platform
+                        </p>
+                      </div>
+                      <span class="text-sm text-muted-foreground font-medium shrink-0" data-testid="text-period-4">
+                        January 2019 - August 2020
+                      </span>
+                    </div>
+
+                    <ul class="space-y-2">
+                      <li class="flex gap-2 text-sm text-muted-foreground" data-testid="text-achievement-4-0">
+                        <span class="text-primary mt-1.5">•</span>
+                        <span>Orchestrated setup of first cloud-based environment and generated Tableau reports with key KPIs</span>
+                      </li>
+                      <li class="flex gap-2 text-sm text-muted-foreground" data-testid="text-achievement-4-1">
+                        <span class="text-primary mt-1.5">•</span>
+                        <span>Designed data warehouse layer involving dimensions, facts, and aggregates</span>
+                      </li>
+                      <li class="flex gap-2 text-sm text-muted-foreground" data-testid="text-achievement-4-2">
+                        <span class="text-primary mt-1.5">•</span>
+                        <span>Developed AWS Lambda converting Excel to text files and pushing data to Datamart</span>
+                      </li>
+                      <li class="flex gap-2 text-sm text-muted-foreground" data-testid="text-achievement-4-3">
+                        <span class="text-primary mt-1.5">•</span>
+                        <span>Integrated multiple hybrid platforms to push raw data into AWS environment</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Experience 5 -->
+            <div class="relative" data-testid="card-experience-5">
+              <div class="flex gap-6">
+                <div class="hidden md:flex items-start">
+                  <div class="flex items-center justify-center w-16 h-16 rounded-full bg-primary text-primary-foreground shadow-lg">
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="flex-1 pb-8">
+                  <div class="bg-card rounded-xl border border-border p-6">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4 gap-2">
+                      <div>
+                        <h3 class="text-xl font-semibold" data-testid="text-role-5">
+                          Business Technology Analyst
+                        </h3>
+                        <p class="text-muted-foreground font-medium" data-testid="text-company-5">
+                          ZS Associates
+                        </p>
+                        <p class="text-sm text-muted-foreground" data-testid="text-location-5">
+                          Business Conduct for EMEA
+                        </p>
+                      </div>
+                      <span class="text-sm text-muted-foreground font-medium shrink-0" data-testid="text-period-5">
+                        September 2016 - December 2018
+                      </span>
+                    </div>
+
+                    <ul class="space-y-2">
+                      <li class="flex gap-2 text-sm text-muted-foreground" data-testid="text-achievement-5-0">
+                        <span class="text-primary mt-1.5">•</span>
+                        <span>Conducted design sessions and end-to-end deployment for comprehensive attendee spend tracking</span>
+                      </li>
+                      <li class="flex gap-2 text-sm text-muted-foreground" data-testid="text-achievement-5-1">
+                        <span class="text-primary mt-1.5">•</span>
+                        <span>Process optimization utilizing indexing & partitioning techniques achieving 40% efficiency gain</span>
+                      </li>
+                      <li class="flex gap-2 text-sm text-muted-foreground" data-testid="text-achievement-5-2">
+                        <span class="text-primary mt-1.5">•</span>
+                        <span>Collaborated with cross-functional teams delivering high-quality solutions</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 md:py-32 px-6 md:px-8 bg-muted/30">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4" data-testid="text-contact-title">
+            Let's Work Together
+          </h2>
+          <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
+            I'm always interested in hearing about new projects and opportunities.
+            Whether you have a question or just want to say hi, feel free to reach out!
+          </p>
+        </div>
+
+        <div class="mb-8">
+          <a
+            href="mailto:vivekdixit0311193@gmail.com"
+            class="inline-flex items-center justify-center gap-2 rounded-md text-lg font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover-elevate active-elevate-2 h-10 px-8"
+            data-testid="button-email-contact"
+          >
+            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m2 7 8.97 5.7a1.94 1.94 0 0 0 2.06 0L22 7"/>
+            </svg>
+            vivekdixit0311193@gmail.com
+          </a>
+        </div>
+
+        <div class="mb-12 text-muted-foreground">
+          <p class="text-sm">Luxembourg • +352 691622796</p>
+        </div>
+
+        <div class="flex justify-center gap-4">
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="h-12 w-12 inline-flex items-center justify-center rounded-md border border-border bg-background hover-elevate active-elevate-2 transition-colors hover:text-foreground"
+            data-testid="button-social-github"
+          >
+            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/>
+            </svg>
+            <span class="sr-only">GitHub</span>
+          </a>
+          
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="h-12 w-12 inline-flex items-center justify-center rounded-md border border-border bg-background hover-elevate active-elevate-2 transition-colors hover:text-[#0A66C2]"
+            data-testid="button-social-linkedin"
+          >
+            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/>
+            </svg>
+            <span class="sr-only">LinkedIn</span>
+          </a>
+          
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="h-12 w-12 inline-flex items-center justify-center rounded-md border border-border bg-background hover-elevate active-elevate-2 transition-colors hover:text-[#1DA1F2]"
+            data-testid="button-social-twitter"
+          >
+            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+            </svg>
+            <span class="sr-only">Twitter</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-border py-12 px-6 md:px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <h3 class="font-semibold mb-4" data-testid="text-footer-brand">Vivek Dixit</h3>
+          <p class="text-sm text-muted-foreground">
+            Business Intelligence Engineer Manager delivering scalable BI solutions and driving business impact.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold mb-4">Quick Links</h3>
+          <div class="flex flex-col gap-2">
+            <button onclick="scrollToSection('hero')" class="text-sm text-muted-foreground hover:text-foreground text-left hover-elevate active-elevate-2 px-2 py-1 rounded-md w-fit" data-testid="link-footer-hero">About</button>
+            <button onclick="scrollToSection('skills')" class="text-sm text-muted-foreground hover:text-foreground text-left hover-elevate active-elevate-2 px-2 py-1 rounded-md w-fit" data-testid="link-footer-skills">Skills</button>
+            <button onclick="scrollToSection('projects')" class="text-sm text-muted-foreground hover:text-foreground text-left hover-elevate active-elevate-2 px-2 py-1 rounded-md w-fit" data-testid="link-footer-projects">Projects</button>
+            <button onclick="scrollToSection('experience')" class="text-sm text-muted-foreground hover:text-foreground text-left hover-elevate active-elevate-2 px-2 py-1 rounded-md w-fit" data-testid="link-footer-experience">Experience</button>
+            <button onclick="scrollToSection('contact')" class="text-sm text-muted-foreground hover:text-foreground text-left hover-elevate active-elevate-2 px-2 py-1 rounded-md w-fit" data-testid="link-footer-contact">Contact</button>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-semibold mb-4">Connect</h3>
+          <div class="flex gap-3">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-2 hover-elevate active-elevate-2 rounded-md" data-testid="button-footer-social-github">
+              <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/>
+              </svg>
+              <span class="sr-only">GitHub</span>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="p-2 hover-elevate active-elevate-2 rounded-md" data-testid="button-footer-social-linkedin">
+              <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/>
+              </svg>
+              <span class="sr-only">LinkedIn</span>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="p-2 hover-elevate active-elevate-2 rounded-md" data-testid="button-footer-social-twitter">
+              <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+              </svg>
+              <span class="sr-only">Twitter</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-border text-center">
+        <p class="text-sm text-muted-foreground flex items-center justify-center gap-1 flex-wrap" data-testid="text-copyright">
+          <span>© <span id="current-year"></span> Vivek Dixit. Built with</span>
+          <svg class="h-4 w-4 text-primary inline" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          </svg>
+          <span>using HTML, CSS & JavaScript</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
